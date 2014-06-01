@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author Luis Fernando
  */
 public class BancoMySQL {
-    String URL = "jdbc:mysql://127.0.0.1:3306/test";
+    String URL = "jdbc:mysql://127.0.0.1:3306/hotel";
     String usuario = "root";
     String senha = "";
     public Connection conexao = null;
