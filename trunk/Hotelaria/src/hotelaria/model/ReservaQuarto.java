@@ -6,7 +6,7 @@ package hotelaria.model;
  * @author Luis Fernando
  */
 public class ReservaQuarto {
-    private int numero;
+    private String numero;
     private int dias;
     private double preco;
     private String nome;
@@ -14,7 +14,7 @@ public class ReservaQuarto {
     private String tipoCama;
 
     //Métodos get.
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
@@ -39,7 +39,7 @@ public class ReservaQuarto {
     }
 
     //Métodos set.
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
