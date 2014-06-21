@@ -6,48 +6,19 @@
 
 package hotelaria.view;
 
-import hotelaria.controller.ClienteController;
 import hotelaria.model.ClienteModel;
 import hotelaria.model.Cliente;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 /**
  *
  * @author Luis Fernando
  */
 public class ClienteView extends javax.swing.JFrame {
-    private ClienteController controller;
 
-    /** Creates new form DisciplinaView */
     public ClienteView() {
         initComponents();
-    }
-
-    public JTextField getTextNome() {
-        return jTextFieldNome;
-    }
-    
-    public JTextField getTextCPF() {
-        return jTextFieldCPF;
-    }
-    
-    public JTextField getTextEmail() {
-        return jTextFieldEmail;
-    }
-    
-    public JTextField getTextTelefone() {
-        return jTextFieldTelefone;
-    }
-    
-    public JTextField getTextEndereco() {
-        return jTextFieldEndereco;
-    }
-    
-    public JTextField getTextCidade() {
-        return jTextFieldCidade;
-    }
-        
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
