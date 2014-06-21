@@ -18,7 +18,7 @@ public class ReservaQuartoModel {
         BancoMySQL objBanco = new BancoMySQL();
         
         //Os valores dos atributos nas variáveis que serão criadas... 
-        int numero = obj.getNumero();
+        String numero = obj.getNumero();
         int dias = obj.getDias();
         double preco = obj.getPreco();
         String nome = obj.getNome();
@@ -31,7 +31,7 @@ public class ReservaQuartoModel {
                     + "VALUES(?,?,?,?,?,?)";
             PreparedStatement objPst = objBanco.conexao.prepareStatement(sql);
                         
-            objPst.setInt(1, numero);
+            objPst.setString(1, numero);
             objPst.setInt(2, dias);
             objPst.setDouble(3, preco);
             objPst.setString(4, nome);
@@ -48,7 +48,7 @@ public class ReservaQuartoModel {
     public void alterar(ReservaQuarto obj){
         BancoMySQL objBanco = new BancoMySQL();
         
-        int numero = obj.getNumero();
+        String numero = obj.getNumero();
         int dias = obj.getDias();
         double preco = obj.getPreco();
         String nome = obj.getNome();
@@ -66,7 +66,7 @@ public class ReservaQuartoModel {
             objPst.setString(3, nome);
             objPst.setString(4, tipoQuarto);
             objPst.setString(5, tipoCama);
-            objPst.setInt(6, numero);
+            objPst.setString(6, numero);
             
             objPst.execute();
             
@@ -77,7 +77,7 @@ public class ReservaQuartoModel {
  
     public void deletar(ReservaQuarto obj){
         BancoMySQL objBanco = new BancoMySQL();
-        int numero = obj.getNumero();
+        String numero = obj.getNumero();
         
         objBanco.conectar();
         try {
@@ -85,7 +85,7 @@ public class ReservaQuartoModel {
                     + " WHERE numero = ?";
             PreparedStatement objPst = objBanco.conexao.prepareStatement(sql);
                         
-            objPst.setInt(1, numero);
+            objPst.setString(1, numero);
             objPst.execute();
             
         } catch (SQLException ex) {
@@ -98,10 +98,10 @@ public class ReservaQuartoModel {
         objBanco.conectar();
         
         try {
-            String sql = "SELECT reservaQuarto.* FROM reservaQuarto WHERE numero = ?";
+            String sql = "SELECT reservaQuarto.* FROM reservaQuarto WHERE numero like ?";
             PreparedStatement objPst = objBanco.conexao.prepareStatement(sql);
             
-            objPst.setString(1, text);
+            objPst.setString(1, "%"+text+"%");
             
             ResultSet objRst = objPst.executeQuery();
             return objRst;
