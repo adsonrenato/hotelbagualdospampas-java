@@ -166,7 +166,7 @@ public class PesquisarClienteView extends javax.swing.JFrame {
           objDto.setCpf(cpf);
           objDao.deletar(objDto);
       } else {
-            JOptionPane.showMessageDialog(null, "É necessário selecionar uma linha.");
+            JOptionPane.showMessageDialog(null, "É necessário selecionar uma linha!");
       }   
     }//GEN-LAST:event_jButtonDeletarActionPerformed
 
@@ -178,12 +178,12 @@ public class PesquisarClienteView extends javax.swing.JFrame {
       linhaSelecionada = jTableCliente.getSelectedRow();
       
       if (linhaSelecionada != -1) {
-          String nome = (String) jTableCliente.getValueAt(linhaSelecionada, 1);
-          String email = (String) jTableCliente.getValueAt(linhaSelecionada, 2);
-          String telefone = (String) jTableCliente.getValueAt(linhaSelecionada, 3);
-          String endereco = (String) jTableCliente.getValueAt(linhaSelecionada, 4);
-          String cidade = (String) jTableCliente.getValueAt(linhaSelecionada, 5);
-          String cpf = (String) jTableCliente.getValueAt(linhaSelecionada, 6);          
+          String nome = (String) jTableCliente.getValueAt(linhaSelecionada, 0);
+          String email = (String) jTableCliente.getValueAt(linhaSelecionada, 1);
+          String telefone = (String) jTableCliente.getValueAt(linhaSelecionada, 2);
+          String endereco = (String) jTableCliente.getValueAt(linhaSelecionada, 3);
+          String cidade = (String) jTableCliente.getValueAt(linhaSelecionada, 4);
+          String cpf = (String) jTableCliente.getValueAt(linhaSelecionada, 5);          
           
           ClienteModel objDao = new ClienteModel();          
           
@@ -196,7 +196,7 @@ public class PesquisarClienteView extends javax.swing.JFrame {
           
           objDao.alterar(objDto);
       } else {
-            JOptionPane.showMessageDialog(null, "É necessário selecionar uma linha.");
+            JOptionPane.showMessageDialog(null, "É necessário selecionar uma linha!");
       }
     }//GEN-LAST:event_jButtonAlterarActionPerformed
 
